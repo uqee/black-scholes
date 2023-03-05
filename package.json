@@ -38,9 +38,12 @@
   "name": "@uqee/black-scholes",
   "publishConfig": {
     "ignore": [
-      "!build/",
+      ".eslintrc",
+      ".husky/",
+      ".prettierrc",
+      "jest.config.ts",
       "src/",
-      "test/"
+      "tsconfig.json"
     ]
   },
   "repository": {
@@ -48,13 +51,13 @@
     "url": "git+https://github.com/uqee/black-scholes.git"
   },
   "scripts": {
+    "_publish": "npm run build && npm publish --access public",
     "build": "rimraf ./build && tsc",
     "prepack": "npmignore --auto",
     "prepare": "husky install",
-    "publish": "npm run build && npm publish --access public",
     "start": "ts-node ./src/index.ts",
     "test": "rimraf ./build && eslint ./src && jest"
   },
   "types": "./build/index.d.js",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }

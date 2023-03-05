@@ -35,7 +35,7 @@
   ],
   "license": "ISC",
   "main": "./build/index.js",
-  "name": "black-scholes",
+  "name": "@uqee/black-scholes",
   "publishConfig": {
     "ignore": [
       "!build/",

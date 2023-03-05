@@ -74,7 +74,7 @@ const blackScholes: BlackScholes = new BlackScholes({
     default 2
 
   priceToSigmaMethod?: 'bisection' | 'newton-raphson'
-    default 'newton-raphson'
+    default 'bisection'
 
   priceToSigmaNRIteractions?: number
     max iterations for the 'newton-raphson' algorithm

@@ -163,7 +163,7 @@ export class BlackScholes {
         : BlackScholes.CNDFs // default
     this.priceToSigmaAccuracy = args?.priceToSigmaAccuracy ?? 0.001
     this.priceToSigmaBLeft = args?.priceToSigmaBLeft ?? 0
-    this.priceToSigmaBRight = args?.priceToSigmaBRight ?? 10
+    this.priceToSigmaBRight = args?.priceToSigmaBRight ?? 2
     this.priceToSigmaMethod =
       args?.priceToSigmaMethod === 'bisection'
         ? this.priceToSigmaB.bind(this)
@@ -319,6 +319,7 @@ export class BlackScholes {
       dprice = option.price - price
 
       if (Math.abs(dprice) < ACCURACY) return sigma
+      else if (option.vega === 0) return 0
       else sigma -= dprice / option.vega
     }
 

@@ -1,5 +1,10 @@
 {
   "author": "Denis Zhbankov",
+  "bugs": {
+    "url": "https://github.com/uqee/black-scholes/issues"
+  },
+  "dependencies": {},
+  "description": "Fast (interpolated), fully typed, auto tested and without any dependencies - implementation of the Black-Scholes model: both from volatility to price (and greeks) and back",
   "devDependencies": {
     "@types/jest": "29.4.0",
     "@typescript-eslint/eslint-plugin": "5.54.0",
@@ -30,12 +35,15 @@
   ],
   "license": "ISC",
   "main": "./build/index.js",
-  "name": "black-scholes",
+  "name": "@uqee/black-scholes",
   "publishConfig": {
     "ignore": [
-      "!build/",
+      ".eslintrc",
+      ".husky/",
+      ".prettierrc",
+      "jest.config.ts",
       "src/",
-      "test/"
+      "tsconfig.json"
     ]
   },
   "repository": {
@@ -43,6 +51,7 @@
     "url": "git+https://github.com/uqee/black-scholes.git"
   },
   "scripts": {
+    "_publish": "npm run build && npm publish --access public",
     "build": "rimraf ./build && tsc",
     "prepack": "npmignore --auto",
     "prepare": "husky install",
@@ -50,5 +59,5 @@
     "test": "rimraf ./build && eslint ./src && jest"
   },
   "types": "./build/index.d.js",
-  "version": "0.0.1"
+  "version": "1.0.1"
 }

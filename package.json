@@ -51,7 +51,7 @@
     "build": "rimraf ./build && tsc",
     "prepack": "npmignore --auto",
     "prepare": "husky install",
-    "publish": "npm publish --access public",
+    "publish": "npm run build && npm publish --access public",
     "start": "ts-node ./src/index.ts",
     "test": "rimraf ./build && eslint ./src && jest"
   },

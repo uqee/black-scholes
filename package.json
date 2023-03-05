@@ -1,5 +1,10 @@
 {
   "author": "Denis Zhbankov",
+  "bugs": {
+    "url": "https://github.com/uqee/black-scholes/issues"
+  },
+  "dependencies": {},
+  "description": "Fast (interpolated), fully typed, auto tested and without any dependencies - implementation of the Black-Scholes model: both from volatility to price (and greeks) and back",
   "devDependencies": {
     "@types/jest": "29.4.0",
     "@typescript-eslint/eslint-plugin": "5.54.0",

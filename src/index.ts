@@ -13,15 +13,15 @@ type Delta = number
 type Gamma = number
 type Price = number
 type Rate = number // risk free interest rate, e.g. 5.25% → (5.25/100)
-type Rho = number
+type Rho = number // dPrice/dRate → dRate +1 means +100%
 type Sigma = number // volatility, e.g. 40% → (40/100)
 type Strike = number
-type Theta = number
+type Theta = number // dPrice/dTime → dTime +1 means +year
 type Time = number // to expiration in years, e.g. 20 days → (20/365)
 type TypeBoolean = boolean // true for call, false for put
 type TypeUnion = 'call' | 'put'
 type Underlying = Price
-type Vega = number
+type Vega = number // dPrice/dSigma → dSigma +1 means +100%
 
 export interface Option {
   delta: Delta

@@ -161,13 +161,13 @@ export class BlackScholes {
       args?.sigmaToPricePrecision === 'double'
         ? BlackScholes.CNDFd //
         : BlackScholes.CNDFs // default
-    this.priceToSigmaAccuracy = args?.priceToSigmaAccuracy ?? 0.01
+    this.priceToSigmaAccuracy = args?.priceToSigmaAccuracy ?? 0.001
     this.priceToSigmaBLeft = args?.priceToSigmaBLeft ?? 0
-    this.priceToSigmaBRight = args?.priceToSigmaBRight ?? 200
+    this.priceToSigmaBRight = args?.priceToSigmaBRight ?? 10
     this.priceToSigmaMethod =
-      args?.priceToSigmaMethod === 'newton-raphson'
-        ? this.priceToSigmaNR.bind(this)
-        : this.priceToSigmaB.bind(this) // default
+      args?.priceToSigmaMethod === 'bisection'
+        ? this.priceToSigmaB.bind(this)
+        : this.priceToSigmaNR.bind(this) // default
     this.priceToSigmaNRIterations = args?.priceToSigmaNRIteractions ?? 10
   }
 
@@ -269,7 +269,7 @@ export class BlackScholes {
 
     let sigmaLeft: Sigma = this.priceToSigmaBLeft
     let sigmaRight: Sigma = this.priceToSigmaBRight
-    const ITERATIONS = Math.round(Math.log((sigmaRight - sigmaLeft) / ACCURACY) / Math.LN2 + 1)
+    const ITERATIONS = Math.round(Math.log((sigmaRight - sigmaLeft) / ACCURACY) / Math.LN2) + 10
 
     // iterate
 

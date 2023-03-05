@@ -38,15 +38,11 @@
   "name": "@uqee/black-scholes",
   "publishConfig": {
     "ignore": [
-      ".eslintrc",
-      ".husky/",
-      ".prettierrc",
-      "!build/",
-      "build/index.test.d.ts",
-      "build/index.test.js",
-      "jest.config.ts",
-      "src/",
-      "tsconfig.json"
+      "*",
+      "!build/index.d.ts",
+      "!build/index.js",
+      "!package.json",
+      "!README.md"
     ]
   },
   "repository": {
@@ -62,5 +58,5 @@
     "test": "rimraf ./build && eslint ./src && jest"
   },
   "types": "./build/index.d.js",
-  "version": "1.0.5"
+  "version": "1.0.7"
 }

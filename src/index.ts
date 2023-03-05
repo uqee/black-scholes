@@ -165,9 +165,9 @@ export class BlackScholes {
     this.priceToSigmaBLeft = args?.priceToSigmaBLeft ?? 0
     this.priceToSigmaBRight = args?.priceToSigmaBRight ?? 2
     this.priceToSigmaMethod =
-      args?.priceToSigmaMethod === 'bisection'
-        ? this.priceToSigmaB.bind(this)
-        : this.priceToSigmaNR.bind(this) // default
+      args?.priceToSigmaMethod === 'newton-raphson'
+        ? this.priceToSigmaNR.bind(this)
+        : this.priceToSigmaB.bind(this) // default
     this.priceToSigmaNRIterations = args?.priceToSigmaNRIteractions ?? 10
   }
 

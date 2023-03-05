@@ -50,5 +50,5 @@
     "test": "rimraf ./build && eslint ./src && jest"
   },
   "types": "./build/index.d.js",
-  "version": "0.0.1"
+  "version": "1.0.0"
 }
